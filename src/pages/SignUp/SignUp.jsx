@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../providers/AuthProviders';
 import { useContext } from 'react';
+import SocialLogin from '../Sheard/SocialLogin/SocialLogin';
 
 const SignUp = () => {
 
@@ -56,7 +57,8 @@ const SignUp = () => {
                         <input className="btn btn-primary" type="submit" value="Sign up" />
                     </div>
                 </form>
-                <p className=' my-4 text-center'>Already have account? <Link className='text-orange-600 font-bold' to="/login">Sign Up</Link></p>
+                <p className=' my-4 text-center'>Already have account? <Link className='text-orange-600 font-bold' to="/login">Login</Link></p>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     </div>
