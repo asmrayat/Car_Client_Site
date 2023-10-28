@@ -25,7 +25,7 @@ const Checkout = () => {
             service_id: _id,
             price
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://y-4kkuy085u-rayats-projects.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
