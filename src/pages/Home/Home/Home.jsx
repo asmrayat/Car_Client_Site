@@ -1,3 +1,5 @@
+import ChooseUs from "../../ChooseUs/ChooseUs";
+import Team from "../../Team/Team";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import PopularProducts from "../PopularProducts/PopularProducts";
@@ -12,6 +14,13 @@ const Home = () => {
            <About></About>
            <Services></Services>
            <PopularProducts></PopularProducts>
+           <div className="mt-56">
+           <Team></Team>
+           </div>
+           <div className="mt-32 mb-32">
+           <ChooseUs></ChooseUs>
+           </div>
+           
         </div>
     );
 };

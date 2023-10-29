@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'; 
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
 import { AuthContext } from '../../../providers/AuthProviders';
@@ -9,22 +9,19 @@ const Header = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { 
+            .then(() => {
                 localStorage.removeItem('car-access-token');
             })
             .catch(error => console.log(error))
     }
 
-    const navItem = <>
-        <li><Link to="/"> Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        {user?.email ? <>
-            <li><Link to="/booking">My Booking</Link></li>
-            <li><button onClick={handleLogOut}>Log out</button></li>
-        </> :
-            <li><Link to="/login">login</Link></li>
-        }
-    </>
+    const navItem =
+        <>
+            <li><Link to="/"> Home</Link></li>
+            {user?.email && (
+                <li><Link to="/booking">My Booking</Link></li>
+            )}
+        </>
     return (
         <div className="navbar bg-base-100 h-28 mb-4">
             <div className="navbar-start">
@@ -46,7 +43,12 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="text-[13px] lg:text-[15px] w-[100px] lg:w-[170px] lg:h-14 btn btn-outline btn-secondary">Appoinment</button>
+                {user?.email ? <>
+                    <button onClick={handleLogOut} className="text-[13px] lg:text-[15px] w-[100px] lg:w-[170px] lg:h-14 btn btn-outline btn-secondary">Logout</button>
+                </> :
+                    <Link to="/login"><button className="text-[13px] lg:text-[15px] w-[100px] lg:w-[170px] lg:h-14 btn btn-outline btn-secondary">Login</button></Link>
+                }
+
             </div>
         </div>
     );
