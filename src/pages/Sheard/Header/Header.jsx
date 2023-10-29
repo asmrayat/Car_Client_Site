@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'; import { Link } from 'react-router-dom';
+import React, { useContext } from 'react'; 
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
 import { AuthContext } from '../../../providers/AuthProviders';
 
@@ -36,7 +37,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost normal-case text-xl">
-                    <img src={logo} alt="" />
+                    <img className='w-16 lg:w-[80px]' src={logo} alt="" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -45,7 +46,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-secondary">Appoinment</button>
+                <button className="text-[13px] lg:text-[15px] w-[100px] lg:w-[170px] lg:h-14 btn btn-outline btn-secondary">Appoinment</button>
             </div>
         </div>
     );
